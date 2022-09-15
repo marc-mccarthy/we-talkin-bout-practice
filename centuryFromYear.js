@@ -6,5 +6,3 @@ function centuryFromYear(year) {
         return parseInt(num) + 1;
     }
 }
-
-console.log(centuryFromYear(2003))
