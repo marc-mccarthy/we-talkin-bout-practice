@@ -1,1 +1,3 @@
-# we-talkin-bout-practice
+# Inspired by the real AI
+
+All my practice stuff.
