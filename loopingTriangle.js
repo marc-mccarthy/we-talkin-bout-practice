@@ -1,4 +1,4 @@
-// Looping through and appending to a string
+// Looping through/appending # to a string triangle
 for (let str = '#'; str.length < 8; str += '#') {
     console.log(str);
 }
