@@ -1,3 +1,4 @@
+// Get the century from the current year
 function centuryFromYear(year) {
     let num = year / 100;
     if (year % 100 === 0) {
@@ -6,3 +7,5 @@ function centuryFromYear(year) {
         return parseInt(num) + 1;
     }
 }
+
+console.log(centuryFromYear(2003))
