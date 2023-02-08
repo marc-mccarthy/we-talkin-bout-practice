@@ -1,5 +1,6 @@
-// Check to see if symbols come out in correct order for open and closing
-var isValid = function (s) {
+// valid parentheses
+
+let isValidParentheses = (s) => {
 	const symbols = {
 		"{": "}",
 		"[": "]",
@@ -26,4 +27,4 @@ var isValid = function (s) {
 	return array.length === 0;
 };
 
-console.log(isValid("{[()]}"));
+console.log(isValidParentheses("{[()]}"));

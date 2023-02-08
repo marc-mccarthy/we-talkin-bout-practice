@@ -1,4 +1,6 @@
-let maxProfit = function (prices) {
+// best time to buy and sell stock
+
+let bestTimeBuyStock = function (prices) {
 	let min = prices[0];
 	let max = 0;
 	for (let i = 1; i < prices.length; i++) {
@@ -11,4 +13,4 @@ let maxProfit = function (prices) {
 	return max;
 };
 
-console.log(maxProfit([2, 3, 2, 5, 7, 10]));
+console.log(bestTimeBuyStock([2, 3, 2, 5, 7, 10]));

@@ -1,3 +1,5 @@
+// prime number
+
 let isPrime = (num) => {
 	if (num <= 1) {
 		return "Is not a prime number";
