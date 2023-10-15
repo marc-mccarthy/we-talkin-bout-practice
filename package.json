@@ -1,9 +1,19 @@
 {
+  "name": "we-talkin-bout-practice",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "mkexe": "node ./scripts/packager.mjs"
+  },
   "devDependencies": {
-    "eslint": "^8.33.0",
-    "eslint-config-standard": "^17.0.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-n": "^15.6.1",
-    "eslint-plugin-promise": "^6.1.1"
+    "chalk": "^5.3.0",
+    "eslint": "^8.51.0",
+    "prettier": "^3.0.3"
+  },
+  "dependencies": {
+    "fs-extra": "^11.1.1",
+    "lambda-api": "^1.0.3",
+    "pkg": "^5.8.1",
+    "windows-shortcuts": "^0.1.6"
   }
 }
