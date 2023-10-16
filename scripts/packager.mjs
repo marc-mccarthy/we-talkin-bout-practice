@@ -1,72 +1,88 @@
-import { exec } from 'child_process';
-import { promises as fs } from 'fs';
-import path from 'path';
-import ws from 'windows-shortcuts';
+import { exec } from "child_process";
+import { promises as fs } from "fs";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
+import ws from "windows-shortcuts";
 
-const nodeMajorVersion = '18';
-const sourceDirectory = 'E:\\Repos\\we-talkin-bout-practice\\scripts\\convert';
-const outputDirectory = 'E:\\Repos\\we-talkin-bout-practice\\scripts\\executables';
+const currentDir = dirname(fileURLToPath(import.meta.url));
+console.log(currentDir)
 
-async function compiler() {
-  try {
-    // Ensure output directory exists
-    await fs.mkdir(outputDirectory, { recursive: true });
+class Packager {
+  static NODE_MAJOR_VERSION = "18";
+  static SOURCE_DIRECTORY = path.join(currentDir, "convert");
+  static OUTPUT_DIRECTORY = path.join(currentDir, "executables");
+  static SHORTCUT_BASE_PATH = "E:\\Shortcuts\\Applications";
 
-    // Get all .js files from the source directory
-    const files = await fs.readdir(sourceDirectory);
-    const jsFiles = files.filter(file => path.extname(file) === '.js');
-    
+  async createExe() {
+    try {
+      await this.#ensureDirectoryExists(Packager.OUTPUT_DIRECTORY);
+      const jsFiles = await this.#getJsFilesFromSource();
 
-    // Package each .js file
-    for (const file of jsFiles) {
-      // current file and shortcut name
-      const baseName = path.basename(file, '.js');
-      const shortcutName = toTitleCase(baseName) + '.lnk';
+      for (const file of jsFiles) {
+        const baseName = path.basename(file, ".js");
+        await this.#packageJsFile(baseName);
+        await this.#createDesktopShortcut(baseName);
+      }
+    } catch (error) {
+      console.error(`Error: ${error}`);
+    }
+  }
 
-      // Paths to the input .js file, output .exe file, and shortcut
-      const inputPath = path.join(sourceDirectory, file);
-      const outputPath = path.join(outputDirectory, path.basename(file, '.js') + '.exe');
-      const shortcutPath = path.join(`E:\\Shortcuts\\Applications\\${shortcutName}`)
-      
-      // Use pkg to package the .js file
-      const pkgCommand = `npx pkg ${inputPath} -t node${nodeMajorVersion}-win-x64 -o ${outputPath}`;
-      console.log(`Creating package from: ${inputPath}`);
-      await runCommand(pkgCommand);
-      console.log(`Finished package at: ${outputPath}`);
+  async #ensureDirectoryExists(directory) {
+    await fs.mkdir(directory, { recursive: true });
+  }
 
-      // Create a shortcut on the desktop
-      ws.create(shortcutPath, outputPath, function(err) {
-        if (!err) {
-          console.log(`Shortcut created at: ${shortcutPath}`);
-        } else {
+  async #getJsFilesFromSource() {
+    const files = await fs.readdir(Packager.SOURCE_DIRECTORY);
+    return files.filter((file) => path.extname(file) === ".js");
+  }
+
+  async #packageJsFile(baseName) {
+    const inputPath = path.join(Packager.SOURCE_DIRECTORY, `${baseName}.js`);
+    const outputPath = path.join(Packager.OUTPUT_DIRECTORY, `${baseName}.exe`);
+
+    const pkgCommand = `npx pkg ${inputPath} -t node${Packager.NODE_MAJOR_VERSION}-win-x64 -o ${outputPath}`;
+    console.log(`Creating package: ${baseName}.js`);
+    await this.#runCommand(pkgCommand);
+    console.log(`Finished package: ${baseName}.exe`);
+  }
+
+  async #createDesktopShortcut(baseName) {
+    const executablePath = path.join(Packager.OUTPUT_DIRECTORY, `${baseName}.exe`);
+    const shortcutPath = path.join(Packager.SHORTCUT_BASE_PATH, `${this.#toTitleCase(baseName)}.lnk`);
+
+    return new Promise((resolve, reject) => {
+      ws.create(shortcutPath, executablePath, (err) => {
+        if (err) {
           console.error(`Failed to create shortcut at: ${shortcutPath}: ${err}`);
+          reject(err);
+        } else {
+          console.log(`Shortcut created: ${this.#toTitleCase(baseName)}.lnk`);
+          resolve();
         }
       });
-    }
-  } catch (error) {
-    console.error(`Error: ${error}`);
+    });
+  }
+
+  #runCommand(command) {
+    return new Promise((resolve, reject) => {
+      exec(command, (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Command failed with error code ${error.code}:\n`, stderr);
+          reject(error);
+        } else {
+          resolve(stdout);
+        }
+      });
+    });
+  }
+
+  #toTitleCase(str) {
+    return str
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
   }
 }
 
-// Helper function to execute shell commands
-function runCommand(command) {
-  return new Promise((resolve, reject) => {
-    exec(command, (error, stdout, stderr) => {
-      if (error) {
-        console.error(`Command failed with error code ${error.code}:\n`, stderr);
-        reject(error);
-      } else {
-        resolve(stdout);
-      }
-    });
-  });
-}
-
-function toTitleCase(str) {
-  return str
-    .split('-')  // Split the string at each hyphen
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))  // Capitalize the first letter of each word
-    .join(' ');  // Join the words back together, separated by spaces
-}
-
-compiler();
+new Packager().createExe();

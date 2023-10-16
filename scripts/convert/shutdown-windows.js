@@ -1,20 +1,21 @@
 #!/usr/bin/env node
 // shutdown-windows.js
 
-const { exec } = require('child_process');
+const { exec } = require("child_process");
 
 const run = (command) => {
-  const { error, stderr, stdout } = exec(command);
+  exec(command, (error, stdout, stderr) => {
+    if (error) {
+      console.error(`Error executing command: ${error.message}`);
+      return;
+    }
 
-  if (error?.message) {
-    console.error(error.message);
-  }
+    if (stderr) {
+      console.error(`Command stderr: ${stderr}`);
+    }
 
-  if (stderr) {
-    console.error(stderr);
-  }
-
-  console.log(stdout);
+    console.log(`Command stdout: ${stdout}`);
+  });
 };
 
-run('shutdown /s /t 0');
+run("shutdown /r /t 0");
