@@ -3,17 +3,21 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "mkexe": "node ./scripts/packager.mjs"
+    "mkexe": "node ./scripts/packager.mjs",
+    "covid": "node ./scripts/safer-covid.mjs"
   },
   "devDependencies": {
     "chalk": "^5.3.0",
-    "eslint": "^8.51.0",
-    "prettier": "^3.0.3"
+    "eslint": "^8.56.0",
+    "prettier": "^3.1.1"
   },
   "dependencies": {
-    "fs-extra": "^11.1.1",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.2.0",
     "lambda-api": "^1.0.3",
+    "node-schedule": "^2.1.1",
     "pkg": "^5.8.1",
+    "playwright": "^1.40.1",
     "windows-shortcuts": "^0.1.6"
   }
 }
