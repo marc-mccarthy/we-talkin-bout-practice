@@ -1,0 +1,13 @@
+/* Link Colors */
+a:link {
+  color: hsl(120, 100%, 25%);
+}
+a:visited {
+  color: hsl(120, 100%, 5%);
+}
+a:hover {
+  color: hsl(120, 100%, 35%);
+}
+a:active {
+  color: hsl(120, 100%, 15%);
+}

@@ -1,0 +1,133 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+	<head> 
+        <title>McCarthy's Mr. Burger</title> <!-- Title of restaurant -->
+		<link rel="stylesheet" type="text/css" href="restaurantStyles.css" />
+		<style>
+			h1	{
+				text-align: center;
+				background-color: indianred; 
+				font-family: arial, helvetica, sans-serif; 
+				color: blue;
+			} 
+			form	{
+					text-align: center;
+			}
+			td		{
+					width: 300px;
+			}
+			#additionalInformation	{
+									vertical-align: top;
+			}	
+			textarea	{
+						width: 300px;
+			}
+		</style>	
+    </head> 
+
+	<body>
+        <main> <!-- The main element contains all blocks on the page -->
+            <header> <!-- The header element contains only the main title at this point -->
+                <h1>McCarthy's Mr. Burger</h1>
+            </header>
+		
+			<nav> <!-- The nav element will include navigation buttons or links -->
+				<hr /> 
+					<p><a href="home.html">Home</a> &nbsp; &nbsp;<a href="menu.html">Menu</a> &nbsp; &nbsp;<a href="contact.html">Contact Us</a></p>
+				<hr />
+			</nav>
+
+			<form action="submit.html" method="POST">
+				<table align="center">
+					<tr> <!-- Full Name label and textbox -->
+						<td align="right"><b>Name:</b>&nbsp;</td>
+						<td align="left"><input type="text" id="fullName" name="fullName" required></td>
+					</tr>
+					<tr> <!-- Email label and textbox -->
+						<td align="right"><b>Email:</b>&nbsp;</td>
+						<td align="left"><input type="text" id="email" name="emailAddress" required></td>
+					</tr>
+					<tr> <!-- Phone Number label and textbox -->
+						<td align="right"><b>Phone:</b>&nbsp;</td>
+						<td align="left"><input type="text" id="phoneNumber" name="phoneNumber" required></td>
+					</tr>
+					<tr> <!-- Dropdown menu -->
+						<td align="right" label for="reasonInquiry">Reason for Inquiry:&nbsp;</label></td>
+						<td align="left"> 
+							<select align="left" id="reasonInquiry" name="reasonInquiry" >
+								<option value="default" selected>Catering</option>
+								<option value="privateParty">Private Party</option>
+								<option value="feedback">Feedback</option>
+								<option value="other">Other</option>
+							</select>
+						</td>
+					</tr>
+					<tr> <!-- Additional information -->
+						<td id=additionalInformation align="right">Additional Information:&nbsp;</td>
+						<td>
+							<textarea align="left" id="additionalinformation" name="additionalinformation" rows="10">
+							</textarea>
+						</td>
+					</tr>
+					<tr> <!-- Have you been to the restaurant? -->
+						<td align="right">Have you been to the restaurant?:&nbsp;</td>
+						<td align="left">
+							<input type="radio" id="choice1" name="been-to" value="no" checked="checked"> No &nbsp;
+							<input type="radio" id="choice2" name="been-to" value="yes"> Yes
+						</td>
+					</tr>
+					<tr> <!-- Best days to contact you -->
+						<td align="right">Best days to contact you:&nbsp;</td>
+						<td align="left">
+							<input type="checkbox" name="day" value="M"> M &nbsp;
+							<input type="checkbox" name="day" value="T"> T &nbsp;
+							<input type="checkbox" name="day" value="W"> W &nbsp;
+							<input type="checkbox" name="day" value="Th"> Th &nbsp;
+							<input type="checkbox" name="day" value="F"> F &nbsp;
+						</td>
+					</tr>	
+		
+				</table>
+	
+				<input type="submit" value="Send Request">
+			</form>
+		</main>
+	</body>	
+  
+
+	<footer> <!-- The footer is a block at the bottom of the page. -->
+		<hr>
+		15228 McCarthy Road, Twinkle Town, MN 59002 <br><br> 763-350-2325</p> <!-- Address and telephone number -->
+	</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

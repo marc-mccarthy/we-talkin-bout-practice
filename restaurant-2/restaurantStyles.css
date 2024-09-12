@@ -1,0 +1,27 @@
+header {
+  background-color: indianred;
+  color: blue;
+}
+h1 {
+  text-align: center;
+  background-color: indianred;
+  font-family: arial, helvetica, sans-serif;
+  color: blue;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background-color: indianred;
+  color: blue;
+}
+nav a:hover {
+  font-weight: bold;
+}
+a:visited {
+  color: green;
+}
+a:active {
+  text-decoration: none;
+}
