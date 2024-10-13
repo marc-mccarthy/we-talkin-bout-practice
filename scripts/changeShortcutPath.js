@@ -4,7 +4,7 @@ import util from 'util';
 import ws from 'windows-shortcuts';
 
 // Configuration
-const shortcutsFolderPath = 'E:\\Shortcuts\\PC\\Emulators';
+const shortcutsFolderPath = 'E:\\Shortcuts\\Games\\PC';
 const newDrive = 'F';
 const oldRootFolder = 'Games';
 const newRootFolder = 'PC';
