@@ -16,7 +16,7 @@ let binarySearch = (array, num) => {
       startIndex = midIndex + 1;
     }
   }
-  return "Number not found in the array";
+  return 'Number not found in the array';
 };
 
 console.log(binarySearch(array, 65));

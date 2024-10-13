@@ -1,32 +1,32 @@
 const crew = {
   _skaters: [
     {
-      firstName: "Radius",
-      lastName: "Welder",
+      firstName: 'Radius',
+      lastName: 'Welder',
       age: 79,
     },
     {
-      firstName: "Kiljoy",
-      lastName: "Rampart",
+      firstName: 'Kiljoy',
+      lastName: 'Rampart',
       age: 88,
     },
     {
-      firstName: "Weenboy",
-      lastName: "Blip",
+      firstName: 'Weenboy',
+      lastName: 'Blip',
       age: 68,
     },
   ],
   _tricks: [
     {
-      trick: "The Flatline",
+      trick: 'The Flatline',
       radPoints: 94,
     },
     {
-      trick: "The Cane Spin",
+      trick: 'The Cane Spin',
       radPoints: 67,
     },
     {
-      trick: "The Arthritis Shuffle",
+      trick: 'The Arthritis Shuffle',
       radPoints: 100,
     },
   ],
@@ -53,8 +53,8 @@ const crew = {
   },
 };
 
-crew.addSkater("Cylas", "Beam", 93);
-crew.addTrick("The Zip Hip", 76);
+crew.addSkater('Cylas', 'Beam', 93);
+crew.addTrick('The Zip Hip', 76);
 
 console.log(crew.skaters);
 console.log(crew.tricks);

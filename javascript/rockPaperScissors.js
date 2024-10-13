@@ -1,14 +1,14 @@
 function getUserChoice(userInput) {
   userInput = userInput.toLowerCase();
   if (
-    userInput === "rock" ||
-    userInput === "paper" ||
-    userInput === "scissors" ||
-    userInput === "bomb"
+    userInput === 'rock' ||
+    userInput === 'paper' ||
+    userInput === 'scissors' ||
+    userInput === 'bomb'
   ) {
     return userInput;
   } else {
-    return console.log("ERROR: Invalid input");
+    return console.log('ERROR: Invalid input');
   }
 }
 
@@ -16,48 +16,48 @@ function getComputerChoice() {
   let choice = Math.floor(Math.random() * 3);
   switch (choice) {
     case 0:
-      return "rock";
+      return 'rock';
     case 1:
-      return "paper";
+      return 'paper';
     case 2:
-      return "scissors";
+      return 'scissors';
     default:
-      return "error";
+      return 'error';
   }
 }
 
 function determineWinner(userChoice, computerChoice) {
   if (userChoice === computerChoice) {
-    return "Tie game!";
+    return 'Tie game!';
   }
-  if (userChoice === "rock") {
-    if (computerChoice === "scissors") {
-      return "You win!";
+  if (userChoice === 'rock') {
+    if (computerChoice === 'scissors') {
+      return 'You win!';
     } else {
-      return "You loose!";
+      return 'You loose!';
     }
   }
-  if (userChoice === "paper") {
-    if (computerChoice === "rock") {
-      return "You win!";
+  if (userChoice === 'paper') {
+    if (computerChoice === 'rock') {
+      return 'You win!';
     } else {
-      return "You loose!";
+      return 'You loose!';
     }
   }
-  if (userChoice === "scissors") {
-    if (computerChoice === "paper") {
-      return "You win!";
+  if (userChoice === 'scissors') {
+    if (computerChoice === 'paper') {
+      return 'You win!';
     } else {
-      return "You loose!";
+      return 'You loose!';
     }
   }
-  if (userChoice === "bomb") {
-    return "You win!";
+  if (userChoice === 'bomb') {
+    return 'You win!';
   }
 }
 
 function playGame() {
-  userChoice = getUserChoice("Rock");
+  userChoice = getUserChoice('Rock');
   computerChoice = getComputerChoice();
   return console.log(determineWinner(userChoice, computerChoice));
 }

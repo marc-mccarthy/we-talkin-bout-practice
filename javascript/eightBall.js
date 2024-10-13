@@ -1,39 +1,39 @@
-let userName = "";
-userName ? console.log(`Hello, ${userName}!`) : console.log("Hello!");
+let userName = '';
+userName ? console.log(`Hello, ${userName}!`) : console.log('Hello!');
 
-let userQuestion = "Will I die?";
+let userQuestion = 'Will I die?';
 
 let randomNumber = Math.floor(Math.random() * 8);
 console.log(randomNumber);
-let eightBall = "";
+let eightBall = '';
 
 switch (randomNumber) {
   case 0:
-    eightBall = "You are a goner";
+    eightBall = 'You are a goner';
     break;
   case 1:
-    eightBall = "It is certain";
+    eightBall = 'It is certain';
     break;
   case 2:
-    eightBall = "It is decidedly so";
+    eightBall = 'It is decidedly so';
     break;
   case 3:
-    eightBall = "Reply hazy try again";
+    eightBall = 'Reply hazy try again';
     break;
   case 4:
-    eightBall = "Cannot predict now";
+    eightBall = 'Cannot predict now';
     break;
   case 5:
-    eightBall = "Do not count on it";
+    eightBall = 'Do not count on it';
     break;
   case 6:
-    eightBall = "My sources say no";
+    eightBall = 'My sources say no';
     break;
   case 7:
-    eightBall = "Outlook not so good";
+    eightBall = 'Outlook not so good';
     break;
   default:
-    eightBall = "error";
+    eightBall = 'error';
     break;
 }
 

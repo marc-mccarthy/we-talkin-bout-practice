@@ -1,19 +1,19 @@
 let favoriteFoods = [
-  "zucchini",
-  "yam",
-  "xigua",
-  "water cress",
-  "vegetables",
-  "quinoa",
-  "peas",
-  "kale",
-  "jicama",
-  "fiddlehead",
+  'zucchini',
+  'yam',
+  'xigua',
+  'water cress',
+  'vegetables',
+  'quinoa',
+  'peas',
+  'kale',
+  'jicama',
+  'fiddlehead',
 ];
-let secretFavoriteFoods = ["pancakes", "pizza", "cake", "ice cream"];
+let secretFavoriteFoods = ['pancakes', 'pizza', 'cake', 'ice cream'];
 let secretKey = [];
 
-let favoriteFoodsString = favoriteFoods.join(""); //Joins favoriteFoods to create string 'zucchiniyamxiguawater cressvegetablesquinoapeaskalejicamafiddlehead'
+let favoriteFoodsString = favoriteFoods.join(''); //Joins favoriteFoods to create string 'zucchiniyamxiguawater cressvegetablesquinoapeaskalejicamafiddlehead'
 
 //Encrypt secret favorite foods into the secretKey array
 for (f = 0; f < secretFavoriteFoods.length; f++) {
@@ -37,10 +37,10 @@ for (f = 0; f < secretKey.length; f++) {
     //Loop through the internal secretKey array
     tempWord.push(
       //Add string value character to tempWord array based on the integer value stored in secretKey at f, at c
-      favoriteFoodsString.at(secretKey[f][c]),
+      favoriteFoodsString.at(secretKey[f][c])
     );
   }
-  testSecretFavoriteFoods.push(tempWord.join("")); //Join the string values in the tempWord array and push that string into the testSecretFavoriteFoods array
+  testSecretFavoriteFoods.push(tempWord.join('')); //Join the string values in the tempWord array and push that string into the testSecretFavoriteFoods array
 }
 
 console.log(testSecretFavoriteFoods);

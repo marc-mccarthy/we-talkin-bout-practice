@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 // shutdown-windows.js
 
-const { exec } = require("child_process");
+const { exec } = require('child_process');
 
 const run = (command) => {
   exec(command, (error, stdout, stderr) => {
@@ -18,4 +18,4 @@ const run = (command) => {
   });
 };
 
-run("shutdown /r /t 0");
+run('shutdown /r /t 0');

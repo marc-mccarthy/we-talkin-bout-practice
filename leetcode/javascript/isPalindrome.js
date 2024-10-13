@@ -1,7 +1,7 @@
 // palindrome number
 
 var isPalindrome = (x) => {
-  let reverse = x.toString().split("").reverse().join("");
+  let reverse = x.toString().split('').reverse().join('');
   if (reverse == x) {
     return true;
   } else {
@@ -9,4 +9,4 @@ var isPalindrome = (x) => {
   }
 };
 
-console.log(isPalindrome("racecar"));
+console.log(isPalindrome('racecar'));

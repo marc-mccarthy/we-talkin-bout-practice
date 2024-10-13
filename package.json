@@ -3,21 +3,26 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "mkexe": "node ./scripts/packager.mjs",
-    "covid": "node ./scripts/safer-covid.mjs"
+    "changeRemote": "node ./scripts/changeRemote.js",
+    "changeShortcutPath": "node ./scripts/changeShortcutPath.js",
+    "backupFiles": "node ./scripts/backupFiles.mjs",
+    "packager": "node ./scripts/packager.mjs",
+    "saferCovid": "node ./scripts/saferCovid.mjs"
   },
   "devDependencies": {
     "chalk": "^5.3.0",
-    "eslint": "^8.56.0",
-    "prettier": "^3.1.1"
+    "eslint": "^9.12.0",
+    "prettier": "^3.3.3"
   },
   "dependencies": {
-    "dotenv": "^16.3.1",
+    "dotenv": "^16.4.5",
     "fs-extra": "^11.2.0",
-    "lambda-api": "^1.0.3",
+    "lambda-api": "^1.1.0",
     "node-schedule": "^2.1.1",
+    "path": "^0.12.7",
     "pkg": "^5.8.1",
-    "playwright": "^1.40.1",
+    "playwright": "^1.48.0",
+    "util": "^0.12.5",
     "windows-shortcuts": "^0.1.6"
   }
 }

@@ -1,4 +1,4 @@
-const string = "HelloWorld";
+const string = 'HelloWorld';
 
 for (var x = 0; x <= string.length; x++) {
   if (string.indexOf(x) === string.lastIndexOf(x)) {

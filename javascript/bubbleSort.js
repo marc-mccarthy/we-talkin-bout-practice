@@ -1,7 +1,7 @@
-console.log("hello world");
+console.log('hello world');
 
 let a = 3;
-let b = "cat";
+let b = 'cat';
 
 console.log(a == b);
 console.log(a === b); // false
@@ -14,11 +14,11 @@ let string2 = `I replied: "it's the Moon"`;
 let string3 = 'I replied: "it\'s the Moon"';
 
 let obj0 = {
-  thing: "a",
+  thing: 'a',
 };
 
 let obj1 = {
-  thing: "a",
+  thing: 'a',
 };
 
 console.log(obj0.thing == obj1.thing);
@@ -33,13 +33,13 @@ let counter = 0;
 
 function countUp() {
   counter++;
-  console.log("in countUp:", counter);
+  console.log('in countUp:', counter);
   if (counter < 10) countUp();
 }
 
 countUp();
 
-let arr2 = ["Kyo", "Abby", "Fred", "Commander Wisdom", "Professor Trouble"];
+let arr2 = ['Kyo', 'Abby', 'Fred', 'Commander Wisdom', 'Professor Trouble'];
 
 let index = 0;
 function displayArray() {
@@ -54,7 +54,7 @@ displayArray();
 
 // switching a value //
 let val0 = true;
-let val1 = "asdf";
+let val1 = 'asdf';
 console.log(val0, val1);
 
 let temp = val0;

@@ -1,32 +1,32 @@
 function getSleepHours(day) {
   day = day.toLowerCase();
   switch (day) {
-    case "monday":
+    case 'monday':
       return 8;
-    case "tuesday":
+    case 'tuesday':
       return 8;
-    case "wednesday":
+    case 'wednesday':
       return 10;
-    case "thursday":
+    case 'thursday':
       return 8;
-    case "friday":
+    case 'friday':
       return 8;
-    case "saturday":
+    case 'saturday':
       return 8;
-    case "sunday":
+    case 'sunday':
       return 8;
   }
 }
 
 function getActualSleepHours() {
   return (
-    getSleepHours("monday") +
-    getSleepHours("tuesday") +
-    getSleepHours("wednesday") +
-    getSleepHours("thursday") +
-    getSleepHours("friday") +
-    getSleepHours("saturday") +
-    getSleepHours("sunday")
+    getSleepHours('monday') +
+    getSleepHours('tuesday') +
+    getSleepHours('wednesday') +
+    getSleepHours('thursday') +
+    getSleepHours('friday') +
+    getSleepHours('saturday') +
+    getSleepHours('sunday')
   );
 }
 
@@ -39,7 +39,7 @@ function calculateSleepDebt() {
   let actualSleepHours = getActualSleepHours();
   let idealSleepHours = getIdealSleepHours();
   if (actualSleepHours === idealSleepHours) {
-    return console.log("You have the perfect ammount of sleep!");
+    return console.log('You have the perfect ammount of sleep!');
   } else if (actualSleepHours > idealSleepHours) {
     let over = actualSleepHours - idealSleepHours;
     return console.log(`You are getting ${over} too many hours of sleep!`);

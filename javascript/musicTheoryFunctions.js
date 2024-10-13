@@ -1,29 +1,29 @@
 //2 Octaves to avoid having to calculate wrap
 const allNotes = [
-  "a",
-  "a#",
-  "b",
-  "c",
-  "c#",
-  "d",
-  "d#",
-  "e",
-  "f",
-  "f#",
-  "g",
-  "g#",
-  "a",
-  "a#",
-  "b",
-  "c",
-  "c#",
-  "d",
-  "d#",
-  "e",
-  "f",
-  "f#",
-  "g",
-  "g#",
+  'a',
+  'a#',
+  'b',
+  'c',
+  'c#',
+  'd',
+  'd#',
+  'e',
+  'f',
+  'f#',
+  'g',
+  'g#',
+  'a',
+  'a#',
+  'b',
+  'c',
+  'c#',
+  'd',
+  'd#',
+  'e',
+  'f',
+  'f#',
+  'g',
+  'g#',
 ];
 
 const majorScale = [2, 2, 1, 2, 2, 2]; //Array of half-step intervals in a major scale from the starting note (e.g. 'c' + 2 half steps = 'd')
@@ -43,8 +43,8 @@ function getScaleOrChord(startingNote, scale) {
   return returnScale;
 }
 
-console.log(getScaleOrChord("g", majorScale));
-console.log(getScaleOrChord("d", dorianScale));
-console.log(getScaleOrChord("c#", dorianScale));
-console.log(getScaleOrChord("f#", majorChord));
-console.log(getScaleOrChord("c", major7add11));
+console.log(getScaleOrChord('g', majorScale));
+console.log(getScaleOrChord('d', dorianScale));
+console.log(getScaleOrChord('c#', dorianScale));
+console.log(getScaleOrChord('f#', majorChord));
+console.log(getScaleOrChord('c', major7add11));

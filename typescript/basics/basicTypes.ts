@@ -4,9 +4,9 @@ console.log(someNumber);
 
 // Write a function that makes words plural by adding "s". Remember that '+' joins two strings.
 function pluralize(string: string): string {
-  return string + "s";
+  return string + 's';
 }
-console.log(pluralize("dog"));
+console.log(pluralize('dog'));
 
 // Write a function that adds or subtracts 1 from a number. Argument 1 is the number. Argument 2 is a boolean. When it's true, add; otherwise, subtract.
 function addOrSubtract(num: number, bool: boolean): number {
