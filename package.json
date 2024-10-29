@@ -1,18 +1,9 @@
 {
-  "name": "we-talkin-bout-practice",
+  "name": "dat-playnite-compare-tool",
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "changeRemote": "node ./scripts/changeRemote.js",
-    "changeShortcutPath": "node ./scripts/changeShortcutPath.js",
-    "backupFiles": "node ./scripts/backupFiles.mjs",
-    "packager": "node ./scripts/packager.mjs",
-    "saferCovid": "node ./scripts/saferCovid.mjs"
-  },
-  "devDependencies": {
-    "chalk": "^5.3.0",
-    "eslint": "^9.12.0",
-    "prettier": "^3.3.3"
+    "start": "node datPlayniteCompareTool.js"
   },
   "dependencies": {
     "dotenv": "^16.4.5",
