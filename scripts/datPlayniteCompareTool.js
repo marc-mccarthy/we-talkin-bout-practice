@@ -1,1 +1,0 @@
-F:/Emulation/Utilities/DatPlayniteCompareTool/datPlayniteCompareTool.js
