@@ -1,0 +1,134 @@
+<!doctype html>
+<html>
+  <!-- Head Element -->
+  <head>
+    <!-- Title of Game -->
+    <title>Lucky Sevens</title>
+
+    <!-- Meta Data -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CDN CSS Links -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+      integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+      crossorigin="anonymous"
+    />
+
+    <!-- Internal CSS styling -->
+    <style>
+      .container {
+        display: grid;
+        text-align: center;
+        grid-template-columns: auto;
+      }
+
+      table {
+        border: 2px solid black;
+        margin: 0;
+        text-align: left;
+        width: 25%;
+      }
+    </style>
+  </head>
+
+  <!-- Body Element -->
+  <body>
+    <!-- Container -->
+    <div class="container">
+      <!-- Header Element -->
+      <h1><b>Lucky Sevens</b></h1>
+
+      <!-- Form for Game -->
+      <form name="luckySevens" onsubmit="return play();">
+        <div class="row">
+          <div class="col">
+            <label
+              for="startBet"
+              style="border: 0; text-align: right"
+              class="form-control"
+              ><b>Starting Bet: </b></label
+            >
+          </div>
+
+          <div class="col">
+            <input
+              type="number"
+              id="betInput"
+              style="width: 100px"
+              class="form-control"
+              placeholder="$0.00"
+            />
+          </div>
+        </div>
+        <br />
+
+        <div class="text-center">
+          <button
+            type="submit"
+            style="width: 150px"
+            id="submitButton"
+            class="btn btn-primary"
+          >
+            <b>Play</b>
+          </button>
+        </div>
+      </form>
+      <br />
+
+      <!-- Results of Game -->
+      <table id="results" class="table" style="display: none">
+        <tr>
+          <th colspan="2"><b>Results</b></th>
+        </tr>
+        <tr>
+          <td bgcolor="#EBFFC6">Starting Bet</td>
+          <td bgcolor="#EBFFC6"><span id="start"></span></td>
+        </tr>
+        <tr>
+          <td bgcolor="#00FFB1">Total Rolls Before Going Broke</td>
+          <td bgcolor="#00FFB1"><span id="rollsNum"></span></td>
+        </tr>
+        <tr>
+          <td bgcolor="#DBB6FF">Highest Amount Won</td>
+          <td bgcolor="#DBB6FF"><span id="max"></span></td>
+        </tr>
+        <tr>
+          <td bgcolor="#DBB700">Roll Count at Hightest Amount Won</td>
+          <td bgcolor="#DBB700"><span id="rollTable"></span></td>
+        </tr>
+      </table>
+    </div>
+
+    <!-- Bootstrap CDN JavaScript Links -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- My JavaScript Links -->
+    <script type="text/javascript" src="js/luckySevens.js"></script>
+  </body>
+</html>
